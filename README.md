@@ -37,11 +37,11 @@ The reverse shell - also called reverse tunnel - is a computer technique that al
 
 ## Demo
 
-Start the server first and wait for the client connection<br>
-`python nc-remote.py <HOST>:<PORT>`
+Syntax: `python main.py [-r|-c] <HOST>:<PORT>`
 
+Start the server first and wait for the client connection<br>
 ```sh
-$ python nc-remote.py 127.0.0.1:5003
+$ python main.py -r 127.0.0.1:5003
                          _
                          \`*-.
                           )  _`-.
@@ -63,10 +63,8 @@ $ python nc-remote.py 127.0.0.1:5003
 ```
 
 Start the client<br>
-`python nc-client.py <HOST>:<PORT>`
-
 ```sh
-$ python nc-client.py 127.0.0.1:5003
+$ python main.py -c 127.0.0.1:5003
 ```
 
 When client is started, the remote is updating
