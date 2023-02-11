@@ -1,17 +1,18 @@
-import os
+import os, sys
 import platform
 import socket
 import random
 
-SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 5003
+SERVER_HOST = sys.argv[1].split(':')[0]
+SERVER_PORT = int(sys.argv[1].split(':')[1])
 BUFFER_SIZE = 1024 * 128
 SEPARATOR = "<sep>"
-BANNER = random.choice(open("./banner.txt", "r", encoding="utf8").read().split("<banner-separator>\n"))
+BANNER = random.choice(open("D:/Bureau/pycat/banner.txt", "r", encoding="utf8").read().split("<banner-separator>\n"))
 
 def banner_comman(cwd, user=os.getlogin(), OS=platform.system()) -> str:
-    return f"\n\033[1m\033[96m┌──(\033[1m\033[94m{user}㉿{OS}\033[1m\033[96m)-[\033[0m\033[1m{cwd}\033[96m]\n\033[1m\033[96m└─\033[1m\033[94m$\033[0m "
+    return f"\n\033[1m\033[96m┌──(\033[1m\033[94m{user}@{OS}\033[1m\033[96m)-[\033[0m\033[1m{cwd}\033[96m]\n\033[1m\033[96m└─\033[1m\033[94m$\033[0m "
 
+os.system('')
 print(BANNER)
 print("[\033[34mINFO\033[0m] PYCAT by Game K")
 s = socket.socket()
