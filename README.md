@@ -84,5 +84,8 @@ When client is started, the remote is updating
 
 The process begins with initializing the remote server, which boots up and begins listening. The client, on the other hand, starts and connects to the remote server. Then the client sends the PID (process id) of the client to the remote server. The remote server, once this PID has been received, sends a "1" to signal its receipt. The client then sends the path to the current working directory. The remote server then sends a command to the client. The client then sends the output of this command to the remote server. This process repeats several times, with the remote server sending commands to the client and the client sending the outputs associated with those commands to the remote server.
 
-![](https://raw.githubusercontent.com/Game-K-Hack/VRweb/main/images/pycat_schema.png)
-*Operation diagram*
+<p align="center" >
+    <img src="https://raw.githubusercontent.com/Game-K-Hack/pycat/main/images/pycat_schema.png" width=500 />
+    <br>
+    <i>Operation diagram</i>
+</p>
